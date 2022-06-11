@@ -1,0 +1,1 @@
+export const url:string = 'https://banking-api-k4ox72tekq-as.a.run.app/api/v1/bankingAPI'
