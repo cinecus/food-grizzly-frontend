@@ -26,10 +26,13 @@ const authSlice = createSlice({
             state.token_id =''
             localStorage.removeItem('token')
             localStorage.removeItem('account_id')
+        },
+        getInfo:(state,action)=>{
+            state.user = action.payload.result.account
         }
     }
 })
 
-export const {signIn,signOut,signUp} = authSlice.actions
+export const {signIn,signOut,signUp,getInfo} = authSlice.actions
 
 export default authSlice.reducer

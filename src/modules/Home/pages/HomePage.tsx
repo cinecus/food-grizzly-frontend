@@ -5,6 +5,7 @@ import AppGrid from '../../../components/AppGrid'
 import GridItem from '../../../components/GridItem'
 import CardItem from '../../../components/CardItem'
 import { Link } from 'react-router-dom'
+import grizzly from '../../../resource/images/grizzly.png'
 
 // import { usePhotos } from '../../../hooks/usePhotos'
 // import { usePosts } from '../../../hooks/usePosts'
@@ -20,17 +21,29 @@ const HomePage= (props:any) => {
   return (
     <AppWrapper>
         
-        <AppGrid id='section1' bg='#bebebe' height='500px'  pd='2rem 8rem'>
-            <GridItem size={'40%'} bg={'#767676'} pd={'1rem'}>
-                <Link to='/photo'>
-                    GET PHOTO
-                </Link>
+        <AppGrid id='section1'  height='100%'  pd='2rem 8rem' minHeight='80vh' >
+            <GridItem size={'40%'} pd={'1rem'}>
+                <ImageContainer>
+                    <img src={grizzly} alt='food grizzly' />
+                    
+                </ImageContainer>
             </GridItem>
-            <GridItem size={'60%'} bg={'#f6f6f6'}>
-                2
+            <GridItem size={'60%'}  pd='3rem'>
+                <Title>
+                    <div className="head">Food Grizzly</div>
+                    <div className="body mt">Demo service for reserve restaurants By MERN Stack</div>
+                    <div className="head mt">Feature</div>
+                    <ul className='mt'>
+                        <li key='1'>Sign In & Sign Up</li>
+                        <li key='1'>See all restaurants</li>
+                        <li key='1'>Show available seats</li>
+                        <li key='1'>Reserve</li>
+                        <li key='1'>See history reserve</li>
+                    </ul>
+                </Title>
             </GridItem>
         </AppGrid>
-        <AppGrid id='section2' bg='#404040' height='300px' cgap='3%' justifyContent='center'  pd='2rem 8rem'>
+        {/* <AppGrid id='section2' bg='#404040' height='300px' cgap='3%' justifyContent='center'  pd='2rem 8rem'>
             <GridItem size={'30%'} bg={'#767676'} pd={'1rem'}>
                 1
             </GridItem>
@@ -105,9 +118,58 @@ const HomePage= (props:any) => {
         </AppGrid>
         <AppGrid id='section5' bg='#bebebe' height='200px'>
             Section5
-        </AppGrid>
+        </AppGrid> */}
     </AppWrapper>
   )
 }
 
 export default HomePage
+
+const ImageContainer = styled.div`
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:100%;
+    flex-direction:column;
+    .title{
+        font-size:1.8rem;
+        font-weight:700;
+    }
+    img{
+        width:60%;
+        height:80%;
+        @media screen and (max-width: 768px){
+            width:80%;
+            height:80%;
+        }
+    }
+   
+`
+
+const Title = styled.div`
+    width:100%;
+    height:100%;
+    padding:2rem;
+    .head{
+        font-size:1.8rem;
+        font-weight:600;
+    }
+    .body{
+        font-size:1.2rem;
+    }
+    .mt{
+        margin-top:1.5rem;
+        @media screen and (max-width: 768px){
+            margin-top:0.5rem;
+        }
+    }
+    li{
+        font-size:1.2rem;
+    }
+    @media screen and (max-width: 768px){
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+`

@@ -6,30 +6,40 @@ const { confirm } = Modal;
 interface ConfirmModalProps{
     title:string,
     content:string,
-    action?:any
+    action?:any,
+    redirect?:any
 }
 
 interface ErrorModalProps{
   title?:string
 }
 
-const ConfirmModal = ({title,content,action}:ConfirmModalProps)=> {
+interface SuccessModalProps{
+  title?:string
+  redirect?:any
+}
 
-        confirm({
+const ConfirmModal = ({title,content,action,redirect}:ConfirmModalProps)=> {
+
+  Modal.confirm({
           title: title,
           icon: <ExclamationCircleOutlined />,
           content: content,
-          onOk:()=>action(),
+          onOk(){
+           action()
+          },
           onCancel() {
             console.log('Cancel');
           },
         })
 }
 
-const SuccessModal = ()=>{
+const SuccessModal = ({redirect}:SuccessModalProps)=>{
     Modal.success({
       title:'Your transaction is completed successfully',
-      // content: 'some messages...some messages...',
+      onOk(){
+        redirect()
+      }
     });
 }
 

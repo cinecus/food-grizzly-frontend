@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "react-query";
 import {GET,POST,DELAY} from '../api/index'
 import { useAppDispatch } from "../store/store";
-import { signIn,signUp } from "../store/slices/authSlice";
+import { signIn,signUp,getInfo } from "../store/slices/authSlice";
 import { url } from "../api/url";
 import {GET_ACCOUNT_INFO, SIGNIN,SIGNUP} from '../api/api_route'
 
@@ -30,8 +30,16 @@ export const useSignUp:any=()=>{
 }
 
 export const useGetAccountInfo:any =()=>{
+    const dispatch = useAppDispatch()
     return useQuery('auth',()=>GET(GET_ACCOUNT_INFO,{headers: {
         Authorization:localStorage.getItem('token')
-        }})
+        }}),{
+            onSuccess:(data)=>{
+                dispatch(getInfo(data))
+            },
+            onError:(error)=>{
+                console.log('error',error)
+            }
+        }
     )
 }

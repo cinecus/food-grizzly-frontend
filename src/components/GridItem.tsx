@@ -18,6 +18,7 @@ const GridItem = styled.div<GridItemProps> `
         flex-grow:0;
         max-width:100%;
         flex-basis:100%;
+
     }
 `
 

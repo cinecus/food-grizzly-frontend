@@ -15,10 +15,11 @@ interface CardItemProps {
 const CardItem = styled.div<CardItemProps>`
     width:auto;
     height:${({height})=>(`${height?height:'auto'}`)}; 
+    border:1px solid #000;
     .card-header{
-        height:${({hd_height})=>(`${hd_height?hd_height:'15%'}`)};
+        height:${({hd_height})=>(`${hd_height?hd_height:'10%'}`)};
         background:${({hd_bg})=>(`${hd_bg?hd_bg:'#fffff'}`)};
-        padding:1rem;
+        /* padding:1rem; */
         display:flex;
         justify-content:center;
         align-items:center;
@@ -27,9 +28,9 @@ const CardItem = styled.div<CardItemProps>`
         //position:absolute;
     }
     .card-body{
-        height:${({bd_height})=>(`${bd_height?bd_height:'85%'}`)};
+        height:${({bd_height})=>(`${bd_height?bd_height:'80%'}`)};
         background:${({bd_bg})=>(`${bd_bg?bd_bg:'#555555'}`)};
-        padding:1rem;
+        /* padding:1rem; */
         display:flex;
         justify-content:center;
         align-items:center;
@@ -41,7 +42,7 @@ const CardItem = styled.div<CardItemProps>`
         }
     }
     .card-footer{
-        height:${({ft_height})=>(`${ft_height?ft_height:'0%'}`)};
+        height:${({ft_height})=>(`${ft_height?ft_height:'10%'}`)};
         background:${({ft_bg})=>(`${ft_bg?ft_bg:'#ffff6'}`)};
         display:flex;
         justify-content:center;

@@ -7,6 +7,7 @@ interface AppGridProps {
     cgap?:string
     rgap?:string
     height?:string
+    minHeight?:string
     bg?:string
     mg?:string
     style?:any
@@ -18,6 +19,7 @@ interface AppGridProps {
 
 const AppGrid = styled.div<AppGridProps>`
     width:100%;
+    min-height: ${({minHeight})=>(minHeight?`${minHeight}`:'auto')};
     height: ${({height})=>(height?`${height}`:'auto')};
     flex-direction:${({direction})=>(direction?`${direction}`:'row')};
     column-gap:${({cgap})=>(cgap?`${cgap}`:'0')};
@@ -30,7 +32,7 @@ const AppGrid = styled.div<AppGridProps>`
     padding:${({pd})=>(pd?`${pd}`:'0')};
     margin:${({mg})=>(mg?`${mg}`:'0')};
     @media screen and (max-width: 768px){
-        padding:1rem 2rem;
+        padding:0.8rem;
         justify-content:center;
     }
 `

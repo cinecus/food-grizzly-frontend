@@ -14,37 +14,31 @@ interface DataType {
 
 export const columns: ColumnsType<DataType> = [
     {
-      title: 'Date Time',
-      dataIndex: 'created_date',
-      key: 'created_date',
+      title: 'Reserve Time',
+      dataIndex: 'reserve_time',
+      key: 'reserve_time',
       align:'center',
-      render:(text)=><>{moment(text).format('YYYY-MM-DD | HH:mm')}</>
+      render:(text,record)=><>{moment(record.created_date).format('YYYY-MM-DD')} | {text}</>
+    },
+    {
+      title: 'Food Store',
+      dataIndex: 'store_id',
+      align:'center',
+      key: 'store_id',
+      render:(text)=><>{text.name}</>
+    },
+    {
+      title: 'Quantity',
+      dataIndex: 'qty',
+      key: 'qty',
+      align:'right',
+      // render:(text,{type})=>type=='withdraw' || type=='transfer' ? <div style={{color:'red'}}>- {formatNumber(text)}</div> : <div style={{color:'green'}}>+ {formatNumber(text)}</div>
     },
     {
       title: 'Type',
       dataIndex: 'type',
       align:'center',
       key: 'type',
-    },
-    {
-      title: 'Amount',
-      dataIndex: 'amount',
-      key: 'amount',
-      align:'right',
-      render:(text,{type})=>type=='withdraw' || type=='transfer' ? <div style={{color:'red'}}>- {formatNumber(text)}</div> : <div style={{color:'green'}}>+ {formatNumber(text)}</div>
-    },
-    {
-      title: 'Remaing Amount',
-      key: 'current_amount',
-      align:'right',
-      dataIndex: 'current_amount',
-      render:(text)=><>{formatNumber(text)}</>
-    },
-    {
-      title: 'Reference Account ID',
-      key: 'ref_account_id',
-      align:'center',
-      dataIndex: 'ref_account_id'
     },
     {
       title: 'Status',

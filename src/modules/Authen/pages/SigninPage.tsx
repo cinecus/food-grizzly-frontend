@@ -38,9 +38,9 @@ const SigninPage:FC<any> = () => {
   if(isLoading) return <h1>Loading...</h1>
   return (
     <AppWrapper>
-      <AppGrid id='section1' bg='#bebebe' height='90vh'  pd='2rem 8rem' justifyContent='center' alignItems='center'>
-      <GridItem size={'45%'}  bg={'#656565'}>     
-        <CardItem>
+      <AppGrid id='section1'  height='90vh'  pd='2rem 8rem' justifyContent='center' alignItems='center'>
+      <GridItem size={'45%'}  bg={'#7E370C'}>     
+        <CardItem hd_height='20%' bd_height='80%' height='320px' bd_bg='#FCF0C8'>
           <div className='card-header'>SIGN IN</div>
           <div className='card-body'>
           <Form

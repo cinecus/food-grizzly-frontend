@@ -21,7 +21,7 @@ const TransactionTable = () => {
     // }]
   return (
     <TableContainer bg='#898989' pd='2rem'>
-        <TableStyle tableLayout='auto' columns={columns} dataSource={data?.result.account.transactions} bordered />
+        <TableStyle tableLayout='auto' columns={columns} dataSource={data?.result.account.transactions} bordered scroll={{x:800}}/>
     </TableContainer>
   )
 }
@@ -31,6 +31,10 @@ export default TransactionTable
 const TableContainer = styled(AppGrid)`
     margin-top:2em;
     border-radius:1rem;
+    @media screen and (max-width: 768px){
+        padding:0.5rem 0.5rem;
+        justify-content:center;
+    }
 `
 
 const TableStyle:typeof Table = styled(Table)`

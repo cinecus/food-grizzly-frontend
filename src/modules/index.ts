@@ -5,7 +5,9 @@ import SigninPage from "./Authen/pages/SigninPage";
 import SignupPage from "./Authen/pages/SignupPage";
 import DepositWithdrawPage from "./Transaction/pages/DepositWithdrawPage";
 import TransferPage from "./Transaction/pages/TransferPage";
-import StatementPage from "./Transaction/pages/StatementPage";
+import HistoryPage from "./Transaction/pages/HistoryPage";
+import StorePage from "./Store/pages/StorePage";
+import SingleStorePage from "./Store/pages/SingleStorePage";
 
 export {
     HomePage,
@@ -13,7 +15,9 @@ export {
     SigninPage,
     SignupPage,
     DepositWithdrawPage,
+    StorePage,
+    SingleStorePage,
     TransferPage,
-    StatementPage,
+    HistoryPage,
     ErrorPage
 }

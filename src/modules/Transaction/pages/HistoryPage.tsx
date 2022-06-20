@@ -4,23 +4,23 @@ import AppWrapper from '../../../components/AppWrapper'
 import AppGrid from '../../../components/AppGrid'
 import GridItem from '../../../components/GridItem'
 import TransactionTable from '../components/TransactionTable'
+import { useAppSelector } from '../../../store/store'
 
-const StatementPage = () => {
+const HistoryPage = () => {
+    const {user} = useAppSelector(state=>state.auth)
+    //console.log('account', account)
   return (
     <AppWrapper>
-        <AppGrid bg='#bebebe'  pd='2rem 8rem' justifyContent='center' alignItems='start'>
+        <AppGrid   pd='2rem 8rem' justifyContent='center' alignItems='start' height='100%' minHeight='100vh'>
             <GridItem size='100%'>
-                <BalanceContainer bg='#bebebe' mg='2rem 0rem' justifyContent='space-between' alignItems='start' rgap='1rem'>
+                <BalanceContainer  mg='2rem 0rem' justifyContent='space-between' alignItems='start' rgap='1rem' >
                     <div>
-                        Welcome,Chananon Chantaratin
-                    </div>
-                    <div>
-                        Your Balance xxx TOKEN
+                        Welcome, {user?.first_name} {user?.last_name}
                     </div>
                 </BalanceContainer>
-                <FilterContainer bg='#696669' height='20vh' justifyContent='center' alignItems='center'>
+                {/* <FilterContainer bg='#696669' height='20vh' justifyContent='center' alignItems='center'>
                     Filter
-                </FilterContainer>
+                </FilterContainer> */}
                 <TransactionTable />
             </GridItem>
         </AppGrid>
@@ -28,7 +28,7 @@ const StatementPage = () => {
   )
 }
 
-export default StatementPage
+export default HistoryPage
 
 const BalanceContainer = styled(AppGrid)`
     @media screen and (max-width: 768px){

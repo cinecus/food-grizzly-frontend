@@ -15,7 +15,9 @@ import {
   SignupPage,
   DepositWithdrawPage,
   TransferPage,
-  StatementPage,
+  HistoryPage,
+  StorePage,
+  SingleStorePage,
   ErrorPage
 } from './modules/index'
 
@@ -58,13 +60,16 @@ const RouterApp = () => {
         <Route path='/' element={<AuthWrapper>
           <ProtectWrapper/>
         </AuthWrapper>}>
-          <Route path='/photo' element={<PhotoPage/>}/>
+        {/* <Route path='/photo' element={<PhotoPage/>}/> */}
+        <Route path='/history' element={<HistoryPage/>}/>
         </Route>
         <Route path='/signin' element={<SigninPage/>}/>
         <Route path='/signup' element={<SignupPage/>}/>
         <Route path='/depositAndWithdraw' element={<DepositWithdrawPage/>}/>
         <Route path='/transfer' element={<TransferPage/>}/>
-        <Route path='/statement' element={<StatementPage/>}/>
+      
+        <Route path='/store' element={<StorePage/>}/>
+        <Route path='/store/:store_id' element={<SingleStorePage/>}/>
         <Route path='*' element={<ErrorPage />} />
       </Routes>
     </Router>

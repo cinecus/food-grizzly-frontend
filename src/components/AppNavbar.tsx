@@ -19,7 +19,7 @@ const AppNavbar:FC<AppNavbarProps> = ({toggle,scrollWithOffset}) => {
     <Nav>
     <NavLink to='/'>
         <div className='logo'>
-            Bitcuz
+            Food Grizzly
     </div>
     </NavLink>
     <Bars onClick={toggle}/>
@@ -43,15 +43,13 @@ const AppNavbar:FC<AppNavbarProps> = ({toggle,scrollWithOffset}) => {
     </NavMenu>
     <NavBtn>
         {localStorage.getItem('token')?<>
-        <NavLink  to='/statement'  >
-            My Statement
+        <NavLink  to='/store'  >
+            Reserve Now
         </NavLink>
-        <NavLink  to='/depositAndWithdraw'  >
-            Deposit/Withdraw
+        <NavLink  to='/history'  >
+            My History
         </NavLink>
-        <NavLink  to='/transfer' >
-            Transfer
-        </NavLink>
+    
             <NavBtnLink onClick={()=>dispatch(signOut())}>
             <FaSignOutAlt size={18}/>
                 Sign Out
@@ -59,6 +57,9 @@ const AppNavbar:FC<AppNavbarProps> = ({toggle,scrollWithOffset}) => {
         </>
         :
         <>
+        <NavLink  to='/store'  >
+            Reserve Now
+        </NavLink>
          <NavBtnLink href='/signin'>
             <FaUser size={18}/>
                 Sign In
@@ -79,7 +80,7 @@ export default AppNavbar
 
 const Nav = styled.nav`
   /* background:linear-gradient(90deg, rgba(174,214,238,1) 28%, rgba(155,148,233,1) 84%); */
-    background:#000;
+    background:#7E370C;
     height:80px;
     display:flex;
     justify-content:space-around;
@@ -88,7 +89,7 @@ const Nav = styled.nav`
     /* position: fixed; */
     top: 0;
     overflow: hidden;
-    width: 100vw;
+    width: 100%;
     /* @media screen and (max-width: 768px){
         top:100;
     } */
@@ -104,7 +105,7 @@ const NavLink = styled(Link)`
     cursor: pointer;
     
     &:hover {
-        color:blueviolet !important;
+        color:#E2C275 !important;
     }
     img{
     height:2.8rem;
@@ -148,7 +149,7 @@ const NavBtn = styled.nav`
 
 const NavBtnLink = styled.a`
     border-radius:4px;
-    background:blueviolet;
+    background:#E2C275;
     padding:10px 22px;
     color:#fff;
     border:none;
